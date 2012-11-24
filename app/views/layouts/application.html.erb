@@ -11,6 +11,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body onload="initialize();">
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <ul class="nav">
+        <a class="brand" href="#">AbQCity</a>
+        <li><a href="issues">Report an Issue</a></li>
+        <li><a href="#">Know your City</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
 	<div id="container">
 	      <div id="user_nav">
 	        <% if user_signed_in? %>

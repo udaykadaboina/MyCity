@@ -1,3 +1,95 @@
 // Place all the styles related to the Issues controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+table tr:nth-child(odd) { background-color:#DDDDDD; }
+table tr:nth-child(even) { background-color:#EEEEEE; }
+
+table tr th {
+    padding: 0px 10px;
+}
+
+table th { color:#FFFFFF; background-color:#000000; }
+
+table tr td {
+    padding: 0px 5px;
+}
+
+.navbar {
+	color: #999999;
+	margin-bottom: 8px;
+	overflow:visible;
+}
+
+.navbar-inner {
+    background-color: #2C2C2C;
+    background-image: -moz-linear-gradient(center top , #333333, #222222);
+    background-repeat: repeat-x;
+    border-radius: 0 0 0 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 -1px 0 rgba(0, 0, 0, 0.1) inset;
+    min-height: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.navbar .brand:hover {
+    text-decoration: none;
+}
+.navbar .brand {
+    color: #99BBFF;
+    display: block;
+    float: left;
+    font-size: 20px;
+    font-weight: 200;
+    line-height: 1;
+    margin-left: -20px;
+    padding: 8px 20px 12px;
+}
+
+
+.navbar .navbar-text {
+    line-height: 40px;
+    margin-bottom: 0;
+}
+.navbar .navbar-link {
+    color: #999999;
+}
+.navbar .navbar-link:hover {
+    color: #FFFFFF;
+}
+.navbar .btn, .navbar .btn-group {
+    margin-top: 5px;
+}
+.navbar .btn-group .btn {
+    margin: 0;
+}
+
+.navbar .nav > li {
+    display: block;
+    float: left;
+}
+.navbar .nav > li > a {
+    color: #999999;
+    float: none;
+    line-height: 19px;
+    padding: 9px 10px 11px;
+    text-decoration: none;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    display: block;
+}
+
+.navbar .nav > li > a:hover {
+    color: #FFFFFF;
+    float: none;
+    line-height: 19px;
+    padding: 9px 10px 11px;
+    text-decoration: none;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    display: block;
+}
+.navbar .btn {
+    display: inline-block;
+    line-height: 18px;
+    margin: 5px 5px 6px;
+    padding: 4px 10px;
+}
