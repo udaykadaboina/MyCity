@@ -1,6 +1,12 @@
 Mycity::Application.routes.draw do
 
-  resources :issues
+  resources :comments
+
+
+  resources :issues do
+    resources :comments
+  end
+  
 
 
   resources :locations
