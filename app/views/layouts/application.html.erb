@@ -16,8 +16,9 @@
     <div class="container">
       <ul class="nav">
         <a class="brand" href="#">AbQCity</a>
-        <li><a href="issues">Report an Issue</a></li>
-        <li><a href="#">Know your City</a></li>
+        <li><%= link_to 'Report an Issue', issues_path %></li>
+        <li><%= link_to 'Know your City', pages_home_path %></li>
+        <li><%= link_to 'About', pages_about_path %></li>
       </ul>
     </div>
   </div>
@@ -26,7 +27,7 @@
 	      <div id="user_nav">
 	        <% if user_signed_in? %>
 	          Signed in as <%= current_user.email %>. Not you? <strong>
-	         <%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "btn-signout" %></strong>
+	         <%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "google-button google-button-red" %></strong>
 	        
 	        <% end %>
 	      </div>

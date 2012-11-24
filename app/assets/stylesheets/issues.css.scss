@@ -6,13 +6,14 @@ table tr:nth-child(odd) { background-color:#DDDDDD; }
 table tr:nth-child(even) { background-color:#EEEEEE; }
 
 table tr th {
-    padding: 0px 10px;
+    padding: 10px;
 }
 
 table th { color:#FFFFFF; background-color:#000000; }
 
 table tr td {
     padding: 0px 5px;
+    font-size: 14px;
 }
 
 .navbar {
@@ -36,7 +37,8 @@ table tr td {
     text-decoration: none;
 }
 .navbar .brand {
-    color: #99BBFF;
+	color: #e34222;  
+  #  color: #99BBFF;
     display: block;
     float: left;
     font-size: 20px;
@@ -69,7 +71,7 @@ table tr td {
     float: left;
 }
 .navbar .nav > li > a {
-    color: #999999;
+    color: #dbdb18;
     float: none;
     line-height: 19px;
     padding: 9px 10px 11px;
@@ -104,7 +106,7 @@ table tr td {
 }
 
 table {
-	width: 700px;
+	width: 800px;
 }
 
 #container {
@@ -113,4 +115,8 @@ table {
 
 body {
 	margin-top: -10px;
+}
+
+table tr td {
+	padding: 5px;
 }
