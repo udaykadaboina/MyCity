@@ -1,5 +1,8 @@
 Mycity::Application.routes.draw do
 
+  resources :issues
+
+
   resources :locations
 
 #  get "location/latitude:float"
