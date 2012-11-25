@@ -14,6 +14,7 @@
 <% else %>
   <%= link_to "sign in", new_user_session_path %>
 <div id='main-image'>
-<img src='assets/ardi_logo.jpeg' width="550" height="350" /></div>
+<%= image_tag "ardi_logo.jpeg", {:width => 550, :height => 350} %>
+</div>
 <h1 id='home-heading'><%= link_to "Sign up", new_user_registration_path %></h1> 
 <% end %>
