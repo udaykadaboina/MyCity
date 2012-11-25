@@ -20,25 +20,6 @@ function initialize() {
 		position: google.maps.ControlPosition.TOP_RIGHT
 	}
 	};
-	$('#park').attr('checked',false);
-    $('#openspace').attr('checked',false);
-    $('#publicart').attr('checked',false);
-    $('#bikepaths').attr('checked',false);
-    $('#citylimits').attr('checked',false);
-    $('#transitroutes').attr('checked',false);
-    $('#neighborhoods').attr('checked',false);
-    $('#policebeats').attr('checked',false);
-    $('#femaexemptions').attr('checked',false);
-    map = new google.maps.Map(document.getElementById('map'), options);
-    parkLayer = new google.maps.KmlLayer('http://data.cabq.gov/community/parksandrec/parks/CityParks.kmz');
-    openspaceLayer = new google.maps.KmlLayer('http://data.cabq.gov/community/openspace/CityOpenSpace.kmz');
-    publicartLayer = new google.maps.KmlLayer('http://data.cabq.gov/community/art/publicart/PublicArt.kmz');
-    bikepathLayer = new google.maps.KmlLayer('http://data.cabq.gov/community/bikepaths/BikePaths.kmz');
-    citylimitLayer = new google.maps.KmlLayer('http://data.cabq.gov/government/citylimits/abqcitylimits.kmz');
-    transitroutesLayer = new google.maps.KmlLayer('http://data.cabq.gov/transit/routesandstops/transitroutes.kmz');
-    neighborhoodLayer = new google.maps.KmlLayer('http://data.cabq.gov/community/neighborhoods/NeighborhoodAssociations.kmz');
-    policebeatLayer = new google.maps.KmlLayer('http://data.cabq.gov/publicsafety/policebeats/APD_BCSO_Beats.kmz');
-    femaexemptionLayer = new google.maps.KmlLayer('http://data.cabq.gov/FEMA/FEMA_exemptions_CABQ.kmz');
 // **************************  Markers init on Log in ****************//
 /*
 Pass a GET request to the index function in Locations model to get the locations marked by the user. 
@@ -79,7 +60,25 @@ google.maps.event.addListener(map, 'dblclick', function(event) {
 		});
 
 	});
-		
+    map = new google.maps.Map(document.getElementById('map'), options);
+    parkLayer = new google.maps.KmlLayer('http://data.cabq.gov/community/parksandrec/parks/CityParks.kmz');
+    openspaceLayer = new google.maps.KmlLayer('http://data.cabq.gov/community/openspace/CityOpenSpace.kmz');
+    publicartLayer = new google.maps.KmlLayer('http://data.cabq.gov/community/art/publicart/PublicArt.kmz');
+    bikepathLayer = new google.maps.KmlLayer('http://data.cabq.gov/community/bikepaths/BikePaths.kmz');
+    citylimitLayer = new google.maps.KmlLayer('http://data.cabq.gov/government/citylimits/abqcitylimits.kmz');
+    transitroutesLayer = new google.maps.KmlLayer('http://data.cabq.gov/transit/routesandstops/transitroutes.kmz');
+    neighborhoodLayer = new google.maps.KmlLayer('http://data.cabq.gov/community/neighborhoods/NeighborhoodAssociations.kmz');
+    policebeatLayer = new google.maps.KmlLayer('http://data.cabq.gov/publicsafety/policebeats/APD_BCSO_Beats.kmz');
+    femaexemptionLayer = new google.maps.KmlLayer('http://data.cabq.gov/FEMA/FEMA_exemptions_CABQ.kmz');
+    $('#park').attr('checked',false);
+    $('#openspace').attr('checked',false);
+    $('#publicart').attr('checked',false);
+    $('#bikepaths').attr('checked',false);
+    $('#citylimits').attr('checked',false);
+    $('#transitroutes').attr('checked',false);
+    $('#neighborhoods').attr('checked',false);
+    $('#policebeats').attr('checked',false);
+    $('#femaexemptions').attr('checked',false);
 // *****************  End of markers functions ************   ///
 // *****************  Start of Info Boxes ***************//
 /*	var infowindow = new google.maps.InfoWindow({
