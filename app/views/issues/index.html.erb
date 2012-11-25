@@ -4,6 +4,7 @@
   <tr>
     <th>Title</th>
     <th>Category</th>
+    <th>Image</th>
     <th>Description</th>
     <th></th>
     <th></th>
@@ -14,6 +15,7 @@
   <tr>
     <td><%= issue.title %></td>
     <td><%= issue.category %></td>
+    <td><%= image_tag issue.image_url(:thumb).to_s %></td>
     <td><%= issue.description %></td>
     <td><%= link_to 'Show', issue %></td>
     <td><%= link_to 'Edit', edit_issue_path(issue) %></td>

@@ -9,7 +9,10 @@
   <b>Category:</b>
   <%= @issue.category %>
 </p>
-
+<p>
+  <b>Image:</b>
+  <%= image_tag @issue.image, :height => 150 %>
+</p>
 <p>
   <b>Description:</b>
   <%= @issue.description %>
