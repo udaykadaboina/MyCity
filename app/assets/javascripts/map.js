@@ -6,9 +6,9 @@ function initialize()
 	        content: contentString
 	    });
 	var map;
-	var latlng = new google.maps.LatLng(37.09, -95.71);
+	var latlng = new google.maps.LatLng(35.0787, -106.6270);
 	var options = {
-	zoom: 5, 
+	zoom: 12, 
 	center: latlng, 
 	mapTypeId: google.maps.MapTypeId.ROADMAP,
 	disableDefaultUI: true,
@@ -34,7 +34,7 @@ Pass a GET request to the index function in Locations model to get the locations
 $.ajax({
 	    type: "GET",
 	    dataType: "json",
-	    url: "/locations",
+	    url: "/issues",
 	    success: function(data){
 			for( var i=0; i<data.length; i++ ){
 				// Pass the latitude and longitude from data to maps.
@@ -64,7 +64,7 @@ google.maps.event.addListener(map, 'dblclick', function(event) {
 		var datastring = 'latitude=' + latitude + '&longitude=' + longitude;
 		$.ajax({
 			type: "POST",
-			url: "/locations",
+			url: "/issues",
 			data: datastring,
 			success: function(){}
 		});
