@@ -17,7 +17,8 @@
   </div>
   <div class="field">
     <%= f.label :category %><br />
-    <%= f.select(:category, options_for_select(Issue::categories)) %>
+  <!--  <%= f.select(:category, options_for_select(Issue::categories)) %> -->
+  <%= f.collection_select(:category, Dataset.all, :id, :name ) %>
   </div>
   <div class="field">
     <%= f.label :image %><br />
