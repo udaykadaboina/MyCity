@@ -1,5 +1,8 @@
 Mycity::Application.routes.draw do
 
+
+  resources :datasets
+
   resources :comments
 
 
@@ -7,7 +10,9 @@ Mycity::Application.routes.draw do
     resources :comments
   end
   
+
   match 'annotations' => 'issues#index', :via => [:get, :post]
+
   resources :locations
 
 #  get "location/latitude:float"
@@ -73,6 +78,9 @@ Mycity::Application.routes.draw do
    get "pages/contact"
 
    get "pages/about"
+   
+   get "pages/dataset"
+
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.

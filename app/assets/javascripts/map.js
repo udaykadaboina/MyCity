@@ -5,7 +5,7 @@ function initialize()
 	var infowindow = new google.maps.InfoWindow({
 	        content: contentString
 	    });
-	var map;
+
 	var latlng = new google.maps.LatLng(35.0787, -106.6270);
 	var options = {
 	zoom: 12, 
@@ -18,12 +18,9 @@ function initialize()
 	navigationControlOptions: {
 		position: google.maps.ControlPosition.TOP_RIGHT
 	}
-	};
-	
-
+};
 
 map = new google.maps.Map(document.getElementById('map'), options);
-
 
 // **************************  Markers init on Log in ****************//
 /*
