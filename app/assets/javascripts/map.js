@@ -5,10 +5,10 @@ function initialize()
 	var infowindow = new google.maps.InfoWindow({
 	        content: contentString
 	    });
-	var map;
-	var latlng = new google.maps.LatLng(37.09, -95.71);
+	//var map;
+	var latlng = new google.maps.LatLng(35.0787, -106.6270);
 	var options = {
-	zoom: 5, 
+	zoom: 12, 
 	center: latlng, 
 	mapTypeId: google.maps.MapTypeId.ROADMAP,
 	disableDefaultUI: true,
@@ -18,12 +18,9 @@ function initialize()
 	navigationControlOptions: {
 		position: google.maps.ControlPosition.TOP_RIGHT
 	}
-	};
-	
-
+};
 
 map = new google.maps.Map(document.getElementById('map'), options);
-
 
 // **************************  Markers init on Log in ****************//
 /*
@@ -34,7 +31,7 @@ Pass a GET request to the index function in Locations model to get the locations
 $.ajax({
 	    type: "GET",
 	    dataType: "json",
-	    url: "/locations",
+	    url: "/issues",
 	    success: function(data){
 			for( var i=0; i<data.length; i++ ){
 				// Pass the latitude and longitude from data to maps.
@@ -64,7 +61,7 @@ google.maps.event.addListener(map, 'dblclick', function(event) {
 		var datastring = 'latitude=' + latitude + '&longitude=' + longitude;
 		$.ajax({
 			type: "POST",
-			url: "/locations",
+			url: "/issues",
 			data: datastring,
 			success: function(){}
 		});

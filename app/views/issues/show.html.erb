@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @issue.title %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @issue.category %>
+</p>
+<p>
+  <b>Image:</b>
+  <%= image_tag @issue.image, :height => 150 %>
+</p>
+<p>Latitude:<%= @issue.latitude %>, Longitude: <%= @issue.longitude %></p>
+<p>
+  <b>Description:</b>
+  <%= @issue.description %>
+</p>
+
+<!-- display comments -->
+<hr>
+<span id="comments_count"><small><%= pluralize(@issue.comments.count, "Comment") %></small></span>
+<h3>Comments</h3>
+<div id="comments">
+<%= render :partial => @issue.comments.reverse %>
+</div>
+
+<!-- adding comments -->
+<%= form_for [@issue, Comment.new], :remote => true do |f| %> 
+	<p>
+    <%= f.label :body, "New Comment" %><br />
+	  <%= f.text_area :body, :size => "40x5" %> </p>
+  	<p><%= f.submit "Add Comment" %></p>
+<% end %>
+
+<%= link_to 'Edit', edit_issue_path(@issue) %> |
+<%= link_to 'Back', issues_path %>

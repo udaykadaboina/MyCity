@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>My City</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= javascript_include_tag "map" %>  
@@ -11,14 +12,34 @@
   <%= csrf_meta_tags %>
 </head>
 <body onload="initialize();">
-	<div id="container">
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <ul class="nav">
+        <%= link_to 'AbQCity', pages_home_path, :class =>"brand" %>
+        <li><%= link_to 'Report an Issue', issues_path %></li>
+        <li><%= link_to 'Know your City', pages_home_path %></li>
+        <li><%= link_to 'About', pages_about_path %></li>
+		<% if user_signed_in? and current_user.email == "admin@unm.edu" %>
+		    <li>
+		    <li><%= link_to 'Add a Dataset', datasets_path %></li>
+		    </li>
+		<% end %> 
+      </ul>
+    </div>
+  </div>
+</div>
+
 	      <div id="user_nav">
 	        <% if user_signed_in? %>
-	          Signed in as <%= current_user.email %>. Not you?
-	         <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+	          Signed in as <%= current_user.email %>. Not you? <strong>
+	         <%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "google-button google-button-red" %></strong>
 	        
 	        <% end %>
 	      </div>
+
+	<div id="container">
+
 
 	      <% flash.each do |name, msg| %>
 	        <%= content_tag :div, msg, :id => "flash_#{name}" %>
