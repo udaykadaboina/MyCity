@@ -7,8 +7,7 @@ Mycity::Application.routes.draw do
     resources :comments
   end
   
-
-
+  match 'annotations' => 'issues#index', :via => [:get, :post]
   resources :locations
 
 #  get "location/latitude:float"
