@@ -1,11 +1,6 @@
 
 function initialize() 
 {	
-	var contentString = 'Hello';
-	var infowindow = new google.maps.InfoWindow({
-	        content: contentString
-	    });
-
 	var latlng = new google.maps.LatLng(35.0787, -106.6270);
 	var options = {
 	zoom: 12, 
@@ -36,6 +31,8 @@ $.ajax({
 			for( var i=0; i<data.length; i++ ){
 				// Pass the latitude and longitude from data to maps.
 				var marker_latlng= new google.maps.LatLng(data[i].latitude,data[i].longitude);
+				// pass the category from the data.
+				var category = data[i].category;
 				var marker = new google.maps.Marker({
 					position: marker_latlng, 
 					map: map,
@@ -73,6 +70,38 @@ google.maps.event.addListener(map, 'dblclick', function(event) {
 // *****************  End of markers functions ************   ///
 
 // *****************  Start of Info Boxes ***************//
+
+
+            <!--Load Markers-->
+                    var markers = [];
+                    for (var i = 0, dataMarkers; dataMarkers = data[i]; i++) {
+                      var latLng = new google.maps.LatLng(dataMarkers.lat, dataMarkers.lng);
+                      var marker = new google.maps.Marker({
+                        position: latLng,
+                        title: dataMarkers.title,
+                        date: dataMarkers.date,
+                        time: dataMarkers.time,
+                        desc: dataMarkers.desc,
+                        img: dataMarkers.img,
+                        add: dataMarkers.address,
+                        cat: dataMarkers.cat,
+                        map: map
+                      });
+
+            <!--Display InfoWindows-->    
+                    var infowindow = new google.maps.InfoWindow({
+                            content: " "
+                          });
+                          google.maps.event.addListener(marker, 'click', function() {
+                            infowindow.setContent('<div id="mapCont"><img class="mapImg" src="'+this.img+'"/>' +
+                                                  '<div class="mapTitle">'+this.title+'</div>' + 
+                                                  this.category +	
+                                                  '<p>'+this.description+'</p></div>');
+                            infowindow.open(map, this);
+                          });
+
+                      markers.push(marker);
+                    }
 
 
 
