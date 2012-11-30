@@ -21,24 +21,36 @@
         <li><%= link_to 'Annotations', issues_path %></li>
         <li><%= link_to 'ABQ City Data', pages_home_path %></li>
         <li><%= link_to 'About', pages_about_path %></li>
+        
 		<% if user_signed_in? and current_user.email == "admin@unm.edu" %>
-		    
-		    <li><%= link_to 'Add a Dataset', datasets_path %></li>
-		    
+		<li><%= link_to 'Add a Dataset', datasets_path %></li>
 		<% end %> 
+
+  <!--  <ul class="nav pull-right"> -->
+      <li class="pull-right">
+       <div id="user_nav">
+          <% if user_signed_in? %>
+   
+           Signed in as <%= current_user.email %>. Not you?
+           <%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => 'btn btn-danger btn-mini' %>
+          <% else %>
+            <%= link_to new_user_registration_path do %>
+          	 	 <button class="btn-mini btn btn-info">Sign Up</button>
+          <% end %>
+            or <%= link_to new_user_session_path do %>
+            <button class="btn btn-info btn-mini">Sign In</button>
+            <% end %>
+          <% end %>
+        </div>
+      </li>
+  <!--  </ul> -->
 
       </ul>
     </div>
   </div>
 </div>
 
-	      <div id="user_nav">
-	        <% if user_signed_in? %>
-	          Signed in as <%= current_user.email %>. Not you? <strong>
-	         <%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "google-button google-button-red" %></strong>
-	        
-	        <% end %>
-	      </div>
+
 
 	<div id="container">
 

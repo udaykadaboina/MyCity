@@ -1,25 +1,42 @@
-<h1>Listing datasets</h1>
+<div class="container">
+<%- model_class = Dataset -%>
+<div class="page-header">
+<h2><%=t '.title', :default => model_class.model_name.human.pluralize %></h2>
 
-<table>
-  <tr>
-    <th>Name</th>
-	<th>Source Link</th>
-	<th></th>
-	<th></th>
-	<th></th>
-  </tr>
-
-<% @datasets.each do |dataset| %>
-  <tr>
-    <td><%= dataset.name %></td>
-	<td><%= dataset.source_link %></td>
-    <td><%= link_to 'Show', dataset %></td>
-    <td><%= link_to 'Edit', edit_dataset_path(dataset) %></td>
-    <td><%= link_to 'Destroy', dataset, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:source_link) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @datasets.each do |dataset| %>
+      <tr>
+        <td><%= link_to dataset.id, dataset_path(dataset) %></td>
+        <td><%= dataset.name %></td>
+        <td><%= dataset.source_link %></td>
+        <td><%= dataset.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_dataset_path(dataset), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      dataset_path(dataset),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_dataset_path,
+            :class => 'btn btn-primary' %>
 
-<%= link_to 'New Dataset', new_dataset_path %>
+</div>

@@ -1,39 +1,34 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Title:</b>
-  <%= @issue.title %>
-</p>
-
-<p>
-  <b>Category:</b>
-  <%= @issue.category %>
-</p>
-<p>
-  <b>Image:</b>
-  <%= image_tag @issue.image, :height => 150 %>
-</p>
-<p>Latitude:<%= @issue.latitude %>, Longitude: <%= @issue.longitude %></p>
-<p>
-  <b>Description:</b>
-  <%= @issue.description %>
-</p>
-
-<!-- display comments -->
-<hr>
-<span id="comments_count"><small><%= pluralize(@issue.comments.count, "Comment") %></small></span>
-<h3>Comments</h3>
-<div id="comments">
-<%= render :partial => @issue.comments.reverse %>
+<div class="container">
+<%- model_class = Issue -%>
+<div class="page-header">
+  <h2><%=t '.title', :default => "Annotation" %></h2>
 </div>
 
-<!-- adding comments -->
-<%= form_for [@issue, Comment.new], :remote => true do |f| %> 
-	<p>
-    <%= f.label :body, "New Comment" %><br />
-	  <%= f.text_area :body, :size => "40x5" %> </p>
-  	<p><%= f.submit "Add Comment" %></p>
-<% end %>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
+  <dd><%= @issue.title %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:category) %>:</strong></dt>
+  <dd><%= @issue.category %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd><%= @issue.description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:image) %>:</strong></dt>
+  <dd><%= image_tag @issue.image %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:latitude) %>:</strong></dt>
+  <dd><%= @issue.latitude %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:longitude) %>:</strong></dt>
+  <dd><%= @issue.longitude %></dd>
+</dl>
 
-<%= link_to 'Edit', edit_issue_path(@issue) %> |
-<%= link_to 'Back', issues_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              issues_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_issue_path(@issue), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              issue_path(@issue),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
+
+</div>
