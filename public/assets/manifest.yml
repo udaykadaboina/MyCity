@@ -7,9 +7,5 @@ ardi_logo.jpeg~HEAD: ardi_logo.jpeg~HEAD
 ardi_logo/index.jpeg~HEAD: ardi_logo.jpeg~HEAD
 rails.png: rails-e19cc14e7b458337c25b4a0b230d6cac.png
 rails/index.png: rails-e19cc14e7b458337c25b4a0b230d6cac.png
-application.js: application-3e4aa7c8506149097cdebe7b7d7751ca.js
-application/index.js: application-3e4aa7c8506149097cdebe7b7d7751ca.js
-map.js: map-240b2f910560e54883149192a41c8680.js
-map/index.js: map-240b2f910560e54883149192a41c8680.js
 application.css: application-9aa88db581f530560391e083428b34f2.css
 application/index.css: application-9aa88db581f530560391e083428b34f2.css

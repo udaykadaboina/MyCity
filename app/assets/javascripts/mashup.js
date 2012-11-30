@@ -6,8 +6,7 @@ function show() {
 		var value = new google.maps.KmlLayer(stuff[i]);
 		value.setMap(null);
 		if ($('#'+i).is(":checked"))
-			value.setMap(map); 	
-		$('#'+i)[0].reset();			
+			value.setMap(map); 			
 	}
 
 }
