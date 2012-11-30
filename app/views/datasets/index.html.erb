@@ -7,7 +7,6 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:source_link) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
@@ -17,8 +16,7 @@
   <tbody>
     <% @datasets.each do |dataset| %>
       <tr>
-        <td><%= link_to dataset.id, dataset_path(dataset) %></td>
-        <td><%= dataset.name %></td>
+        <td><%= link_to dataset.name, dataset_path(dataset) %></td>
         <td><%= dataset.source_link %></td>
         <td><%= dataset.created_at %></td>
         <td>

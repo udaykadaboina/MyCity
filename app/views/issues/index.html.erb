@@ -7,7 +7,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
+      
       <th><%= model_class.human_attribute_name(:title) %></th>
       <th><%= model_class.human_attribute_name(:category) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
@@ -21,8 +21,8 @@
   <tbody>
     <% @issues.each do |issue| %>
       <tr>
-        <td><%= link_to issue.id, issue_path(issue) %></td>
-        <td><%= issue.title %></td>
+        
+        <td><%= link_to issue.title, issue_path(issue) %></td>
         <td><%= issue.category %></td>
         <td><%= issue.description %></td>
         <td><%= image_tag issue.image_url(:thumb).to_s %></td>
