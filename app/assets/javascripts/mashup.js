@@ -7,7 +7,7 @@ function show() {
 					value.setMap(null);
 					if ($('#'+i).is(":checked"))
 						value.setMap(map); 	
-						$('#'+i)[0].reset();			
+								
 				}
 
 }

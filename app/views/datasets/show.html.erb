@@ -1,13 +1,16 @@
+<div class="container">
 <p id="notice"><%= notice %></p>
 
-<p>
+<div>
   <b>Name:</b>
   <%= @dataset.name %>
-
+</div>
+<div>
   <b>Data Link:</b>
   <%= @dataset.source_link %>
-</p>
+</div>
 
 
 <%= link_to 'Edit', edit_dataset_path(@dataset) %> |
 <%= link_to 'Back', datasets_path %>
+</div>
