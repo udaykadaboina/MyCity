@@ -12,9 +12,10 @@
       <th><%= model_class.human_attribute_name(:category) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:image) %></th>
-      <th><%= model_class.human_attribute_name(:latitude) %></th>
+      <th><%= model_class.human_attribute_name(:location) %></th>
+      <!--<th><%= model_class.human_attribute_name(:latitude) %></th>
       <th><%= model_class.human_attribute_name(:longitude) %></th>
-      <!--<th><%= model_class.human_attribute_name(:created_at) %></th> -->
+      <th><%= model_class.human_attribute_name(:created_at) %></th> -->
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -26,9 +27,10 @@
         <td><%= issue.category %></td>
         <td><%= issue.description %></td>
         <td><%= image_tag issue.image_url(:thumb).to_s %></td>
-        <td><%= issue.latitude %></td>
+        <td><%= issue.latitude %>, <%= issue.longitude %></td>
+        <!--<td><%= issue.latitude %></td>
         <td><%= issue.longitude %></td>
-        <!--<td><%= issue.created_at %></td> -->
+        <td><%= issue.created_at %></td> -->
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_issue_path(issue), :class => 'btn btn-mini' %>
@@ -46,5 +48,5 @@
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_issue_path,
             :class => 'btn btn-primary' %>
-
+<br />
 </div>
