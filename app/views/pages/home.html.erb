@@ -1,22 +1,22 @@
-
-
+<div>
 <% if user_signed_in? %>
 <div id="map" onload="initialize();">
 </div>
-<div id="formalign" >
+</div>
+
+<div id="formalign" class="hero-unit2">
         <!--h4>Datasets:</h4-->
-		<br><br><br>
 	<% i = 0 %>
 	<script>
 	 var stuff = new Array(100);
 	</script>
     
 	<% for dataset in @datasets %> 
-		
+		&nbsp;&nbsp;&nbsp;&nbsp;
 		<% @datasetcheckvaues[i] =  i %>
 		
         <%= check_box_tag @datasetcheckvaues[i], value=@datasetcheckvaues[i], false %> <%= dataset.name %>
-        <br><br>
+        <br><br> 
 		<script>
 		 	stuff['<%= i %>'] = '<%= dataset.source_link %>'
 			total_data_sets = '<%= @datasets.length %>';
@@ -24,13 +24,17 @@
 		<% i = i+1 %>
 		
 
-	<% end %>
-     <%= tag "input", { "type" => "button", "value" => "Display", "onclick" => "show()" } %>
+	<% end %><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;
+     <%= tag "input", { "type" => "button", "value" => "Display", "onclick" => "show()", "class" => "btn btn-info btn-medium mybutton"} %>
 </div>
-<% else %>
-  <%= link_to "sign in", new_user_session_path %>
-<div id='main-image'>
-<%= image_tag "ardi_logo.jpeg", {:width => 550, :height => 350} %>
+
+
+<%else %>
+  <!--<%= link_to "sign in", new_user_session_path %> -->
+<div id='main-image' class="home-heading">
+<%= image_tag "abq_logo.jpeg", {:width => 550, :height => 350} %>
+<br />
+<h2><%= link_to "Sign up", new_user_registration_path, :class => "btn btn-info home-heading" %></h2> 
 </div>
-<h1 id='home-heading'><%= link_to "Sign up", new_user_registration_path %></h1> 
 <% end %>
+

@@ -1,34 +1,50 @@
-
-<h1>Listing Annotations</h1>
-
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Category</th>
-    <th>Image</th>
-    <th>Location</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @issues.each do |issue| %>
-  <tr>
-    <td><%= issue.title %></td>
-    <td><%= issue.category %></td>
-    <td><%= image_tag issue.image_url(:thumb).to_s %></td>
-    <td><%= issue.latitude %>,<%= issue.longitude %></td>
-    <td><%= issue.description %></td>
-    <td><%= link_to 'Show', issue %></td>
-    <td><%= link_to 'Edit', edit_issue_path(issue) %></td>
-    <td><%= link_to 'Destroy', issue, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+<div class="container">
+<%- model_class = Issue -%>
+<div class="page-header">
+<!--  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1> -->
+  <h2>Listing Annotations</h2>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      
+      <th><%= model_class.human_attribute_name(:title) %></th>
+      <th><%= model_class.human_attribute_name(:category) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:image) %></th>
+      <th><%= model_class.human_attribute_name(:latitude) %></th>
+      <th><%= model_class.human_attribute_name(:longitude) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @issues.each do |issue| %>
+      <tr>
+        
+        <td><%= link_to issue.title, issue_path(issue) %></td>
+        <td><%= issue.category %></td>
+        <td><%= issue.description %></td>
+        <td><%= image_tag issue.image_url(:thumb).to_s %></td>
+        <td><%= issue.latitude %></td>
+        <td><%= issue.longitude %></td>
+        <td><%= issue.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_issue_path(issue), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      issue_path(issue),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_issue_path,
+            :class => 'btn btn-primary' %>
 
-<%= link_to 'New Annotation', new_issue_path %>
-
+</div>

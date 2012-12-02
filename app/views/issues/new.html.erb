@@ -1,7 +1,8 @@
-
-<h1>New Annotation</h1>
-
-
-<%= render 'form' %>
-
-<%= link_to 'Back', issues_path %>
+<div class="container">
+<%- model_class = Issue -%>
+<div class="page-header">
+  <h2><%=t '.title', :default => t('helpers.titles.new', :model => model_class.model_name.human,
+                                 :default => "New Annotation") %></h2>
+</div>
+<%= render :partial => 'form' %>
+</div>
