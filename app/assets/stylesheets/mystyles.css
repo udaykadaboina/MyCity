@@ -31,6 +31,9 @@ text-shadow: none;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#333333', endColorstr='#222222', GradientType=0);
 }
 
+.navbar .brand{
+  margin-left: 5px;
+}
 .navbar .nav > li > a { 
 text-shadow: none;
 color:#d6cfcf;
@@ -57,4 +60,8 @@ color:#d6cfcf;
     border-radius: 6px 6px 6px 6px;
     margin-bottom: 30px;
     padding: 0px;
+}
+
+#user_nav {
+  margin-right: 5px
 }
