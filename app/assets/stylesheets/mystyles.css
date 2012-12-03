@@ -43,3 +43,18 @@ color:#d6cfcf;
 .navbar li {
   text-shadow: none;
 }
+
+
+.hero-unit2 {
+    background-color: #EEEEEE;
+    border-radius: 6px 6px 6px 6px;
+    margin-bottom: 30px;
+    padding: 30px;
+}
+
+.hero-unit3 {
+    background-color: #EEEEEE;
+    border-radius: 6px 6px 6px 6px;
+    margin-bottom: 30px;
+    padding: 0px;
+}
