@@ -11,7 +11,7 @@
  *= require_self
  *= require_tree .
  */
-#map{width: 70%;height: 400px;border: 1px solid #000; margin-top: 80px}
+#map{height: 400px;border: 1px solid #000; margin-top: 80px}
 #home-heading
 {
 color: white;
