@@ -12,7 +12,7 @@
 	</script>
     
 	<% for dataset in @datasets %> 
-		&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;
 		<% @datasetcheckvaues[i] =  i %>
 		
         <%= check_box_tag @datasetcheckvaues[i], value=@datasetcheckvaues[i], false %> <%= dataset.name %>
