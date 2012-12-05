@@ -5,11 +5,13 @@ ardhi_logo.jpeg: ardhi_logo-cb755e62f7cc2e38b0b43b36976e891d.jpeg
 ardhi_logo/index.jpeg: ardhi_logo-cb755e62f7cc2e38b0b43b36976e891d.jpeg
 ardi_logo.jpeg: ardi_logo-cb755e62f7cc2e38b0b43b36976e891d.jpeg
 ardi_logo/index.jpeg: ardi_logo-cb755e62f7cc2e38b0b43b36976e891d.jpeg
+ardi_logo.jpeg~HEAD: ardi_logo.jpeg~HEAD
+ardi_logo/index.jpeg~HEAD: ardi_logo.jpeg~HEAD
 rails.png: rails-e19cc14e7b458337c25b4a0b230d6cac.png
 rails/index.png: rails-e19cc14e7b458337c25b4a0b230d6cac.png
 application.js: application-3e4aa7c8506149097cdebe7b7d7751ca.js
 application/index.js: application-3e4aa7c8506149097cdebe7b7d7751ca.js
 map.js: map-240b2f910560e54883149192a41c8680.js
 map/index.js: map-240b2f910560e54883149192a41c8680.js
-application.css: application-444a78e47377e9392088e455d00d787f.css
-application/index.css: application-444a78e47377e9392088e455d00d787f.css
+application.css: application-0804916f6d31e5f5e6d573d973627335.css
+application/index.css: application-0804916f6d31e5f5e6d573d973627335.css
