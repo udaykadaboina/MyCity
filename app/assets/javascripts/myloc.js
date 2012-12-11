@@ -8,6 +8,8 @@ if (navigator.geolocation) {
 }
 
 function displayLocation(position) {
-var latitude = position.coords.latitude; var longitude = position.coords.longitude;
+var latitude = position.coords.latitude; 
+var longitude = position.coords.longitude;
 var div = document.getElementById("location");
-div.innerHTML = "You are at Latitude: " + latitude + ", Longitude: " + longitude; }
+div.innerHTML = "Your current location is " + latitude + "," + longitude;
+}
