@@ -20,6 +20,8 @@
   <%= @issue.description %>
 </p>
 
+<%= link_to 'Edit', edit_issue_path(@issue), :class => "btn btn-mini" %> |
+<%= link_to 'Back', issues_path, :class => "btn btn-mini" %>
 <!-- display comments -->
 <hr>
 <span id="comments_count"><small><%= pluralize(@issue.comments.count, "Comment") %></small></span>
@@ -36,7 +38,6 @@
   	<p><%= f.submit "Add Comment" %></p>
 <% end %>
 
-<%= link_to 'Edit', edit_issue_path(@issue) %> |
-<%= link_to 'Back', issues_path %>
+
 
 </div>
