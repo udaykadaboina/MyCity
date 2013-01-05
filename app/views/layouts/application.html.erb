@@ -44,7 +44,9 @@
     <li <% if current_page?(pages_about_path) -%>class="active"<% end -%>>
          <%= link_to 'About', pages_about_path %>
     </li>
-
+    <li <% if current_page?(pages_news_path) -%>class="active"<% end -%>>
+         <%= link_to 'News', pages_news_path %>
+    </li>
  </ul>
 
     <ul class="nav pull-right">

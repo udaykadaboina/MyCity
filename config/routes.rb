@@ -79,6 +79,8 @@ Mycity::Application.routes.draw do
 
    get "pages/about"
    
+   get "pages/news"
+   
    get "pages/dataset"
 
   # See how all your routes lay out with "rake routes"
