@@ -1,10 +1,12 @@
+<meta name="viewport" content="initial-scale-1.0, user-scalable=no" />
+
 <div>
 <% if user_signed_in? %>
 <div id="map" onload="initialize();">
 </div>
 </div>
 
-<div id="formalign" class="hero-unit3">
+<div id="formalign" class="hero-unit3 myfloat">
         <!--h4>Datasets:</h4-->
 	<% i = 0 %>
 	<script>
@@ -12,7 +14,7 @@
 	</script>
     
 	<% for dataset in @datasets %> 
-		&nbsp;&nbsp;
+		&nbsp;
 		<% @datasetcheckvaues[i] =  i %>
 		
         <%= check_box_tag @datasetcheckvaues[i], value=@datasetcheckvaues[i], false %> <%= dataset.name %>
@@ -24,7 +26,7 @@
 		<% i = i+1 %>
 		
 
-	<% end %><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;
+	<% end %><br/><br/>&nbsp;&nbsp;
      <%= tag "input", { "type" => "button", "value" => "Display", "onclick" => "show()", "class" => "btn btn-info btn-medium mybutton"} %>
 </div>
 

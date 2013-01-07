@@ -65,3 +65,7 @@ color:#d6cfcf;
 #user_nav {
   margin-right: 5px
 }
+
+.myfloat {
+  float: left;
+}

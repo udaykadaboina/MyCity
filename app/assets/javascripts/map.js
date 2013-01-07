@@ -69,7 +69,53 @@ google.maps.event.addListener(map, 'dblclick', function(event) {
 	});
 	
 
+/*
+// +++++++ UNM Data ++++++++//
+google.maps.event.addListener(map, 'dblclick', function(event) {
+		var marker = new google.maps.Marker({position: event.latLng, draggable: true, map: map});
+			google.maps.event.addListener(marker, 'click', function() {
+			      infowindow.open(map,marker);
+			    });
+		var latitude=event.latLng.lat();
+		var longitude=event.latLng.lng(); 
+		var datastring = 'latitude=' + latitude + '&longitude=' + longitude;
+		$.ajax({
+			type: "POST",
+			url: "http://search.unm.edu/maps/locationinfo/gyms.json",
+			data: datastring,
+			success: function(){}
+		});
+
+	});
 	
+
+*/
+
+
+$.ajax({
+	    type: "GET",
+	    dataType: "json",
+	    url: "http://search.unm.edu/maps/locationinfo/gyms.json",
+	    success: function(data){
+			for (var i = 0, length = json.length; i < length; i++) {
+			  var data = json[i],
+			      latLng = new google.maps.LatLng(data.lat, data.lng); 
+
+			  // Creating a marker and putting it on the map
+			  var marker = new google.maps.Marker({
+			    position: latLng,
+			    map: map,
+			    title: data.title
+			  });
+			}
+		}
+	});	
+
+
+// +*+*+*+*+*+*+*+
+
+
+
 // *****************  End of markers functions ************   ///
 
 // *****************  Start of Info Boxes ***************//
