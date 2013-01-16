@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121128033036) do
+ActiveRecord::Schema.define(:version => 20121206234252) do
 
   create_table "comments", :force => true do |t|
     t.integer  "issue_id"
@@ -36,12 +36,13 @@ ActiveRecord::Schema.define(:version => 20121128033036) do
     t.string   "image"
     t.float    "latitude"
     t.float    "longitude"
+    t.integer  "dataset_id"
   end
 
   create_table "locations", :force => true do |t|
     t.float    "latitude"
     t.float    "longitude"
-    t.integer  "issue_id"
+    t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
