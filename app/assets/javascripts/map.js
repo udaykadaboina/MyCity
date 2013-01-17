@@ -33,7 +33,11 @@ $.ajax({
 
 			google.maps.event.addListener(marker, 'click', (function(marker, i) {
 	    	    return function(){
-	    	    	infowindow.setContent(data[i].title);
+	    	    //	var link = '<a href="/issues/' + i + '">' + data[i].title + '</a>';
+	    	    	var link = '<a href="http://abqcity.herokuapp.com/issues/#'+ [i] + '">' + data[i].title + '</a>';
+	    	    //	var link = '<a href="http://abqcity.herokuapp.com/issues" >' + data[i].length + '</a>';
+	    	    //	infowindow.setContent(data[i].title);
+	    	    	infowindow.setContent(link);
 	    	    	infowindow.open(map,marker);
 	    	    }
 		    })(marker, i));
