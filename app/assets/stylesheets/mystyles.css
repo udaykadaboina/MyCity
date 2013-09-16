@@ -3,6 +3,7 @@
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
+  border: 0px;
 }
 
 .navbar li {
@@ -69,4 +70,8 @@ color:#d6cfcf;
 .myfloat {
   float: left;
   margin-left: 10px
+}
+
+.navbar-inner {
+  border: 0px solid #D4D4D4;
 }
