@@ -28,7 +28,7 @@
         <td><%= issue.latitude %>, <%= issue.longitude %></td>
 
         <td>
-          <% if current_user.id == issue.user_id %>
+          <% if can? :destroy, issue %>
             <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
             issue_path(issue),
             :method => :delete,
